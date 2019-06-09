@@ -4,7 +4,7 @@
 # In[2]:
 
 
-get_ipython().system('pip install opencv-contrib-python')
+#get_ipython().system('pip install opencv-contrib-python')
 
 
 # In[21]:
@@ -26,10 +26,10 @@ cap=cv2.VideoCapture(0)
 
 while cap.isOpened():
     status,img=cap.read()
-    (h,w)=img.shape[:2]
-    centre=(h/2,w/2)
-    rot=cv2.getRotationMatrix2D(centre,90,1)
-    final=cv2.warpAffine(img,rot,(h,w))
+    (h,w)=img.shape[:2] #getting values of height and width
+    centre=(h/2,w/2) # getting center 
+    rot=cv2.getRotationMatrix2D(centre,90,1) # rotating with 90 as angle and 1 as scaling factor
+    final=cv2.warpAffine(img,rot,(h,w)) #using affine transformation
     
     cv2.imshow('1',img)
     cv2.imshow('2',final)

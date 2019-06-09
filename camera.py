@@ -31,9 +31,9 @@ cap=cv2.VideoCapture(0)
 
 while cap.isOpened():
     status,frame=cap.read()
-    gray=cv2.cvtColor(frame,cv2.COLOR_BGR2GRAY)
-    back=cv2.cvtColor(gray,cv2.COLOR_GRAY2BGR)
-    dual=np.hstack((frame,back))
+    gray=cv2.cvtColor(frame,cv2.COLOR_BGR2GRAY) #gray scale
+    back=cv2.cvtColor(gray,cv2.COLOR_GRAY2BGR) # gray 2 BGR
+    dual=np.hstack((frame,back)) #stacking horizaontally
     cv2.imshow('d',dual)
     #cv2.imshow('1',frame)
     #cv2.imshow('2',gray)
